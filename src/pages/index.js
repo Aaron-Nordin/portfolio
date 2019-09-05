@@ -12,46 +12,69 @@ import Gallery from '../components/Gallery';
 const ROW1_IMAGES = [
   {
     src: require('../assets/images/fulls/01.jpg'),
-    thumbnail: require('../assets/images/thumbs/01.jpg'),
-    caption: 'Ad infinitum',
+    thumbnail: require('../assets/images/thumbs/ReactIcon.png'),
+    caption: 'React',
   },
   {
     src: require('../assets/images/fulls/02.jpg'),
-    thumbnail: require('../assets/images/thumbs/02.jpg'),
-    caption: 'Dressed in Clarity',
+    thumbnail: require('../assets/images/thumbs/ReduxIcon.png'),
+    caption: 'Redux',
   },
   {
     src: require('../assets/images/fulls/03.jpg'),
-    thumbnail: require('../assets/images/thumbs/03.jpg'),
-    caption: 'Raven',
+    thumbnail: require('../assets/images/thumbs/node.png'),
+    caption: 'Node.JS',
   },
   {
     src: require('../assets/images/fulls/04.jpg'),
-    thumbnail: require('../assets/images/thumbs/04.jpg'),
-    caption: "I'll have a cup of Disneyland, please",
+    thumbnail: require('../assets/images/thumbs/express.png'),
+    caption: 'Express',
   },
 ];
 
 const ROW2_IMAGES = [
   {
     src: require('../assets/images/fulls/05.jpg'),
-    thumbnail: require('../assets/images/thumbs/05.jpg'),
-    caption: 'Cherish',
+    thumbnail: require('../assets/images/thumbs/html5.png'),
+    caption: 'HTML5',
   },
   {
     src: require('../assets/images/fulls/06.jpg'),
-    thumbnail: require('../assets/images/thumbs/06.jpg'),
-    caption: 'Different.',
+    thumbnail: require('../assets/images/thumbs/css-3.png'),
+    caption: 'CSS3',
   },
   {
     src: require('../assets/images/fulls/07.jpg'),
-    thumbnail: require('../assets/images/thumbs/07.jpg'),
-    caption: 'History was made here',
+    thumbnail: require('../assets/images/thumbs/javascript.png'),
+    caption: 'Javascript',
   },
   {
     src: require('../assets/images/fulls/08.jpg'),
-    thumbnail: require('../assets/images/thumbs/08.jpg'),
-    caption: 'People come and go and walk away',
+    thumbnail: require('../assets/images/thumbs/PostgreSQL.png'),
+    caption: 'PostgreSQL',
+  },
+];
+
+const ROW3_IMAGES = [
+  {
+    src: require('../assets/images/fulls/05.jpg'),
+    thumbnail: require('../assets/images/thumbs/git.png'),
+    caption: 'Git',
+  },
+  {
+    src: require('../assets/images/fulls/06.jpg'),
+    thumbnail: require('../assets/images/thumbs/jest-test.png'),
+    caption: 'Jest Test',
+  },
+  {
+    src: require('../assets/images/fulls/07.jpg'),
+    thumbnail: require('../assets/images/thumbs/d3.png'),
+    caption: 'd3',
+  },
+  {
+    src: require('../assets/images/fulls/08.jpg'),
+    thumbnail: require('../assets/images/thumbs/PostgreSQL.png'),
+    caption: 'PostgreSQL',
   },
 ];
 const IndexPage = () => (
@@ -60,42 +83,103 @@ const IndexPage = () => (
 
     <section id="banner">
       <header>
-        <h2>This is Overflow</h2>
+        <h2>About Aaron</h2>
       </header>
       <p>
-        A brand new site template designed by{' '}
-        <a href="http://twitter.com/ajlkn">AJ</a> for{' '}
-        <a href="http://html5up.net">HTML5 UP</a>.<br />
-        It’s responsive, built on HTML5/CSS3, and entirely free
-        <br />
-        under the{' '}
-        <a href="http://html5up.net/license">Creative Commons license</a>.
+        Aaron is a Microbiologist whose love of all things tiny turned him
+        towards coding. <br />
+        He also loves round things, mainly basketballs and things that are
+        attached to wheels. <br />
       </p>
       <footer>
         <Scroll type="id" element="first">
           <a href="#first" className="button style2 scrolly">
-            Act on this message
+            Here is a picture of Aaron on a wheeled thing
           </a>
         </Scroll>
       </footer>
     </section>
 
+    <article className="container box style2">
+      <header>
+        <h2>Skills</h2>
+        {/* <p>
+          Justo phasellus et aenean dignissim
+          <br />
+          placerat cubilia purus lectus.
+        </p> */}
+      </header>
+
+      <div className="inner gallery">
+        <Gallery
+          images={ROW1_IMAGES.map(({ src, thumbnail, caption }) => ({
+            src,
+            thumbnail,
+            caption,
+          }))}
+        />
+        <Gallery
+          images={ROW2_IMAGES.map(({ src, thumbnail, caption }) => ({
+            src,
+            thumbnail,
+            caption,
+          }))}
+        />
+        <Gallery
+          images={ROW3_IMAGES.map(({ src, thumbnail, caption }) => ({
+            src,
+            thumbnail,
+            caption,
+          }))}
+        />
+      </div>
+    </article>
+
+    <article className="container box style2">
+      <header>
+        <h2>Projects</h2>
+        {/* <p>
+          Justo phasellus et aenean dignissim
+          <br />
+          placerat cubilia purus lectus.
+        </p> */}
+      </header>
+    </article>
+
     <article id="first" className="container box style1 right">
       <a href="/#" className="image fit">
-        <img src={pic1} alt="" />
+        {/* <img src={pic1} alt="" /> */}
+        <iframe
+          src="https://gene-toolkit.com"
+          frameborder="0"
+          height="100%"
+          width="100%"
+          style={{zoom:"0.5"}}
+        ></iframe>
       </a>
       <div className="inner">
         <header>
+          <br/>
+          <br/>
           <h2>
-            Lorem ipsum
-            <br />
-            dolor sit amet
+            GeneToolkit
+            {/* <br />
+            dolor sit amet */}
           </h2>
         </header>
         <p>
-          Tortor faucibus ullamcorper nec tempus purus sed penatibus. Lacinia
-          pellentesque eleifend vitae est elit tristique velit tempus etiam.
+          GeneToolkit is a platform for testing, exploring, and storing genetic
+          sequences. To begin, users upload genes in either DNA or RNA format to
+          their profile. These sequences can then be used in a variety of
+          scientific assays, including transcription, translation, and sequence
+          analysis. This project is literally award-winning!
         </p>
+        <br/>
+        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+          <a href="https://github.com/Aaron-Nordin/genetic-toolset">Github</a>
+          <a href="https://gene-toolkit.com">Live Site</a>
+        </div>
+        <br/>
       </div>
     </article>
 
@@ -115,34 +199,6 @@ const IndexPage = () => (
           Rhoncus mattis egestas sed fusce sodales rutrum et etiam ullamcorper.
           Etiam egestas scelerisque ac duis magna lorem ipsum dolor.
         </p>
-      </div>
-    </article>
-
-    <article className="container box style2">
-      <header>
-        <h2>Magnis parturient</h2>
-        <p>
-          Justo phasellus et aenean dignissim
-          <br />
-          placerat cubilia purus lectus.
-        </p>
-      </header>
-
-      <div className="inner gallery">
-        <Gallery
-          images={ROW1_IMAGES.map(({ src, thumbnail, caption }) => ({
-            src,
-            thumbnail,
-            caption,
-          }))}
-        />
-        <Gallery
-          images={ROW2_IMAGES.map(({ src, thumbnail, caption }) => ({
-            src,
-            thumbnail,
-            caption,
-          }))}
-        />
       </div>
     </article>
 

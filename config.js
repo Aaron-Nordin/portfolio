@@ -1,5 +1,5 @@
 module.exports = {
-  siteTitle: 'Gatsby Starter Overflow', // <title>
+  siteTitle: "Aaron's Portfolio", // <title>
   manifestName: 'Overflow',
   manifestShortName: 'Landing', // max 12 characters
   manifestStartUrl: '/',
@@ -8,8 +8,8 @@ module.exports = {
   manifestDisplay: 'standalone',
   manifestIcon: 'src/assets/img/website-icon.png',
   pathPrefix: `/gatsby-starter-overflow/`, // This path is subpath of your hosting https://domain/portfolio
-  authorName: 'Anubhav',
-  heading: 'Web Developer',
+  authorName: 'Aaron Nordin',
+  heading: 'Full-Stack Developer',
   // social
   socialLinks: [
     {
