@@ -63,7 +63,8 @@ class Gallery extends Component {
             href={obj.src}
             onClick={e => this.openLightbox(i, e)}
             className="image fit"
-          >
+            >
+            <h1 style={{paddingRight: "1.3vw"}}>{obj.iconName}</h1>
             <img src={obj.thumbnail} alt="" title={obj.caption} />
           </a>
         </div>

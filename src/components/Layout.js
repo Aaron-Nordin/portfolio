@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+
 import { StaticQuery, graphql } from 'gatsby';
 
 import '../assets/sass/main.scss';
@@ -10,6 +11,8 @@ class Layout extends Component {
     super(props);
     this.state = {
       isPreloaded: true,
+      height: null,
+      width: null
     };
   }
 
@@ -17,6 +20,9 @@ class Layout extends Component {
     this.timeoutId = setTimeout(() => {
       this.setState({ isPreloaded: false });
     }, 100);
+    let height = window.innerHeight;
+    let width = window.innerWidth;
+    this.setState({ height, width });
   }
 
   componentWillUnmount() {

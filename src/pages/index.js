@@ -7,28 +7,31 @@ import pic1 from '../assets/images/pic01.jpg';
 import pic2 from '../assets/images/pic02.jpg';
 import Scroll from '../components/Scroll';
 import Gallery from '../components/Gallery';
-import CircleWave from "../components/CircleWave"
 
 const ROW1_IMAGES = [
   {
     src: require('../assets/images/fulls/01.jpg'),
     thumbnail: require('../assets/images/thumbs/ReactIcon.png'),
     caption: 'React',
+    iconName: "React"
   },
   {
     src: require('../assets/images/fulls/02.jpg'),
     thumbnail: require('../assets/images/thumbs/ReduxIcon.png'),
     caption: 'Redux',
+    iconName: "Redux"
   },
   {
     src: require('../assets/images/fulls/03.jpg'),
     thumbnail: require('../assets/images/thumbs/node.png'),
     caption: 'Node.JS',
+    iconName: "Node.JS"
   },
   {
     src: require('../assets/images/fulls/04.jpg'),
     thumbnail: require('../assets/images/thumbs/express.png'),
     caption: 'Express',
+    iconName: "Express"
   },
 ];
 
@@ -37,21 +40,25 @@ const ROW2_IMAGES = [
     src: require('../assets/images/fulls/05.jpg'),
     thumbnail: require('../assets/images/thumbs/html5.png'),
     caption: 'HTML5',
+    iconName: "HTML5"
   },
   {
     src: require('../assets/images/fulls/06.jpg'),
     thumbnail: require('../assets/images/thumbs/css-3.png'),
     caption: 'CSS3',
+    iconName: "CSS3"
   },
   {
     src: require('../assets/images/fulls/07.jpg'),
     thumbnail: require('../assets/images/thumbs/javascript.png'),
     caption: 'Javascript',
+    iconName: "Javascript"
   },
   {
     src: require('../assets/images/fulls/08.jpg'),
     thumbnail: require('../assets/images/thumbs/PostgreSQL.png'),
     caption: 'PostgreSQL',
+    iconName: "PostgreSQL"
   },
 ];
 
@@ -60,21 +67,25 @@ const ROW3_IMAGES = [
     src: require('../assets/images/fulls/05.jpg'),
     thumbnail: require('../assets/images/thumbs/git.png'),
     caption: 'Git',
+    iconName: "Git"
   },
   {
     src: require('../assets/images/fulls/06.jpg'),
     thumbnail: require('../assets/images/thumbs/jest-test.png'),
     caption: 'Jest Test',
+    iconName: "Jest"
   },
   {
     src: require('../assets/images/fulls/07.jpg'),
     thumbnail: require('../assets/images/thumbs/d3.png'),
     caption: 'd3',
+    iconName: "d3"
   },
   {
     src: require('../assets/images/fulls/08.jpg'),
-    thumbnail: require('../assets/images/thumbs/PostgreSQL.png'),
-    caption: 'PostgreSQL',
+    thumbnail: require('../assets/images/thumbs/digOcean.png'),
+    caption: 'DigitalOcean',
+    iconName: "DigitalOcean"
   },
 ];
 const IndexPage = () => (
@@ -112,24 +123,27 @@ const IndexPage = () => (
 
       <div className="inner gallery">
         <Gallery
-          images={ROW1_IMAGES.map(({ src, thumbnail, caption }) => ({
+          images={ROW1_IMAGES.map(({ src, thumbnail, caption, iconName }) => ({
             src,
             thumbnail,
             caption,
+            iconName
           }))}
         />
         <Gallery
-          images={ROW2_IMAGES.map(({ src, thumbnail, caption }) => ({
+          images={ROW2_IMAGES.map(({ src, thumbnail, caption, iconName }) => ({
             src,
             thumbnail,
             caption,
+            iconName
           }))}
         />
         <Gallery
-          images={ROW3_IMAGES.map(({ src, thumbnail, caption }) => ({
+          images={ROW3_IMAGES.map(({ src, thumbnail, caption, iconName }) => ({
             src,
             thumbnail,
             caption,
+            iconName
           }))}
         />
       </div>
