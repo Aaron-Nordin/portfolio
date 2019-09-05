@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Layout from '../components/Layout';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -8,6 +7,7 @@ import pic1 from '../assets/images/pic01.jpg';
 import pic2 from '../assets/images/pic02.jpg';
 import Scroll from '../components/Scroll';
 import Gallery from '../components/Gallery';
+import CircleWave from "../components/CircleWave"
 
 const ROW1_IMAGES = [
   {
@@ -204,10 +204,11 @@ const IndexPage = () => (
 
     <article className="container box style3">
       <header>
-        <h2>Nisl sed ultricies</h2>
-        <p>Diam dignissim lectus eu ornare volutpat orci.</p>
+        <h2>Contact Me</h2>
+        <br/>
+        {/* <p>Diam dignissim lectus eu ornare volutpat orci.</p> */}
       </header>
-      <form method="post" action="#">
+      <form method="post" action="mailto:nordin.aaron@gmail.com" encType="text/plain">
         <div className="row gtr-50">
           <div className="col-6 col-12-mobile">
             <input
@@ -222,7 +223,7 @@ const IndexPage = () => (
               type="text"
               className="text"
               name="email"
-              placeholder="Email"
+              placeholder="Your Email"
             />
           </div>
           <div className="col-12">
@@ -239,7 +240,7 @@ const IndexPage = () => (
       </form>
     </article>
 
-    <article className="container box style3">
+    {/* <article className="container box style3">
       <header>
         <h2>Elements</h2>
         <p>This starter has other elements.</p>
@@ -247,7 +248,7 @@ const IndexPage = () => (
         Check it out
         <Link to="/Element"> here </Link>
       </header>
-    </article>
+    </article> */}
 
     <Footer />
   </Layout>
