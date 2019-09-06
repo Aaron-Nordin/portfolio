@@ -120,7 +120,7 @@ const ROW4_IMAGES = [
 
 const bikePic = require('../assets/images/thumbs/cypress.png');
 function bikeFn() {
-  return <ModalImage large={bikePic} alt="dirtbike" />;
+  return <ModalImage large={bikePic} small={bikePic} alt="dirtbike" />;
 }
 
 const IndexPage = () => (
@@ -148,7 +148,7 @@ const IndexPage = () => (
           href="#first"
           className="button style2 scrolly"
           style={{ fontSize: '1em' }}
-          onClick={() => bikeFn }
+          onClick={bikeFn}
         >
           Here is a picture of Aaron on a wheeled thing
         </button>
@@ -177,8 +177,8 @@ const IndexPage = () => (
         className="inner gallery"
         style={{
           boxShadow:
-            '2px 2px 5px black, 1px 1px 3px black, 0px 0px 5px black, 0px 0px 10px black, 0px 0px 20px black, 0px 0px 30px black, 0px 0px 25px black, 0px 0px 15px black, 0px 0px 35px black, 0px 0px 40px black', 
-            backgroundColor: "rgb(225, 255, 225, 0.3)"
+            '2px 2px 5px black, 1px 1px 3px black, 0px 0px 5px black, 0px 0px 10px black, 0px 0px 20px black, 0px 0px 30px black, 0px 0px 25px black, 0px 0px 15px black, 0px 0px 35px black, 0px 0px 40px black',
+          backgroundColor: 'rgb(225, 255, 225, 0.3)',
         }}
       >
         <Gallery
@@ -320,13 +320,14 @@ const IndexPage = () => (
         <br />
         {/* <p>Diam dignissim lectus eu ornare volutpat orci.</p> */}
       </header>
-      <form method="POST" data-netlify="true" name="contactForm">
+      <form action="POST" data-netlify="true" name="contactForm">
         <div className="row gtr-50">
           <div className="col-6 col-12-mobile">
             <input
               type="text"
               className="text"
-              name="nameInput"
+              name="name"
+              id="name"
               placeholder="Name"
             />
           </div>
@@ -334,7 +335,8 @@ const IndexPage = () => (
             <input
               type="text"
               className="text"
-              name="emailInput"
+              name="email"
+              id="email"
               placeholder="Your Email"
             />
             {/* <div className="col-6 col-12-mobile">
@@ -342,7 +344,7 @@ const IndexPage = () => (
           </div>
           <div data-netlify-recaptcha="true"></div>
           <div className="col-12">
-            <textarea name="messageInput" placeholder="Message" />
+            <textarea name="message" id="message" placeholder="Message" />
           </div>
           <div className="col-12">
             <ul className="actions">
