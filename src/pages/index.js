@@ -13,25 +13,25 @@ const ROW1_IMAGES = [
     src: require('../assets/images/fulls/01.jpg'),
     thumbnail: require('../assets/images/thumbs/ReactIcon.png'),
     caption: 'React',
-    iconName: "React"
+    iconName: 'React',
   },
   {
     src: require('../assets/images/fulls/02.jpg'),
     thumbnail: require('../assets/images/thumbs/ReduxIcon.png'),
     caption: 'Redux',
-    iconName: "Redux"
+    iconName: 'Redux',
   },
   {
     src: require('../assets/images/fulls/03.jpg'),
     thumbnail: require('../assets/images/thumbs/node.png'),
     caption: 'Node.JS',
-    iconName: "Node.JS"
+    iconName: 'Node.JS',
   },
   {
     src: require('../assets/images/fulls/04.jpg'),
     thumbnail: require('../assets/images/thumbs/express.png'),
     caption: 'Express',
-    iconName: "Express"
+    iconName: 'Express',
   },
 ];
 
@@ -40,25 +40,25 @@ const ROW2_IMAGES = [
     src: require('../assets/images/fulls/05.jpg'),
     thumbnail: require('../assets/images/thumbs/html5.png'),
     caption: 'HTML5',
-    iconName: "HTML5"
+    iconName: 'HTML5',
   },
   {
     src: require('../assets/images/fulls/06.jpg'),
     thumbnail: require('../assets/images/thumbs/css-3.png'),
     caption: 'CSS3',
-    iconName: "CSS3"
+    iconName: 'CSS3',
   },
   {
     src: require('../assets/images/fulls/07.jpg'),
     thumbnail: require('../assets/images/thumbs/javascript.png'),
     caption: 'Javascript',
-    iconName: "Javascript"
+    iconName: 'Javascript',
   },
   {
     src: require('../assets/images/fulls/08.jpg'),
     thumbnail: require('../assets/images/thumbs/PostgreSQL.png'),
     caption: 'PostgreSQL',
-    iconName: "PostgreSQL"
+    iconName: 'PostgreSQL',
   },
 ];
 
@@ -67,25 +67,25 @@ const ROW3_IMAGES = [
     src: require('../assets/images/fulls/05.jpg'),
     thumbnail: require('../assets/images/thumbs/git.png'),
     caption: 'Git',
-    iconName: "Git"
+    iconName: 'Git',
   },
   {
     src: require('../assets/images/fulls/06.jpg'),
     thumbnail: require('../assets/images/thumbs/jest-test.png'),
     caption: 'Jest Test',
-    iconName: "Jest"
+    iconName: 'Jest',
   },
   {
     src: require('../assets/images/fulls/07.jpg'),
     thumbnail: require('../assets/images/thumbs/d3.png'),
     caption: 'd3',
-    iconName: "d3"
+    iconName: 'd3',
   },
   {
     src: require('../assets/images/fulls/08.jpg'),
     thumbnail: require('../assets/images/thumbs/digOcean.png'),
     caption: 'DigitalOcean',
-    iconName: "DigitalOcean"
+    iconName: 'DigitalOcean',
   },
 ];
 const IndexPage = () => (
@@ -127,7 +127,7 @@ const IndexPage = () => (
             src,
             thumbnail,
             caption,
-            iconName
+            iconName,
           }))}
         />
         <Gallery
@@ -135,7 +135,7 @@ const IndexPage = () => (
             src,
             thumbnail,
             caption,
-            iconName
+            iconName,
           }))}
         />
         <Gallery
@@ -143,7 +143,7 @@ const IndexPage = () => (
             src,
             thumbnail,
             caption,
-            iconName
+            iconName,
           }))}
         />
       </div>
@@ -168,13 +168,13 @@ const IndexPage = () => (
           frameborder="0"
           height="100%"
           width="100%"
-          style={{zoom:"0.5"}}
+          style={{ zoom: '0.5' }}
         ></iframe>
       </a>
       <div className="inner">
         <header>
-          <br/>
-          <br/>
+          <br />
+          <br />
           <h2>
             GeneToolkit
             {/* <br />
@@ -188,12 +188,12 @@ const IndexPage = () => (
           scientific assays, including transcription, translation, and sequence
           analysis. This project is literally award-winning!
         </p>
-        <br/>
+        <br />
         <div style={{ display: 'flex', justifyContent: 'space-around' }}>
           <a href="https://github.com/Aaron-Nordin/genetic-toolset">Github</a>
           <a href="https://gene-toolkit.com">Live Site</a>
         </div>
-        <br/>
+        <br />
       </div>
     </article>
 
@@ -219,16 +219,16 @@ const IndexPage = () => (
     <article className="container box style3">
       <header>
         <h2>Contact Me</h2>
-        <br/>
+        <br />
         {/* <p>Diam dignissim lectus eu ornare volutpat orci.</p> */}
       </header>
-      <form method="post" action="mailto:nordin.aaron@gmail.com" encType="text/plain">
+      <form method="POST" data-netlify="true" name="contactForm">
         <div className="row gtr-50">
           <div className="col-6 col-12-mobile">
             <input
               type="text"
               className="text"
-              name="name"
+              name="nameInput"
               placeholder="Name"
             />
           </div>
@@ -236,12 +236,15 @@ const IndexPage = () => (
             <input
               type="text"
               className="text"
-              name="email"
+              name="emailInput"
               placeholder="Your Email"
             />
+            <div className="col-6 col-12-mobile">
+              <div data-netlify-recaptcha="true"></div>
+            </div>
           </div>
           <div className="col-12">
-            <textarea name="message" placeholder="Message" />
+            <textarea name="messageInput" placeholder="Message" />
           </div>
           <div className="col-12">
             <ul className="actions">
