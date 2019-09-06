@@ -7,6 +7,8 @@ import pic1 from '../assets/images/pic01.jpg';
 import pic2 from '../assets/images/pic02.jpg';
 import Scroll from '../components/Scroll';
 import Gallery from '../components/Gallery';
+import Lightbox from 'react-images';
+import ModalImage from 'react-modal-image';
 
 const ROW1_IMAGES = [
   {
@@ -88,11 +90,50 @@ const ROW3_IMAGES = [
     iconName: 'DigitalOcean',
   },
 ];
+
+const ROW4_IMAGES = [
+  {
+    src: require('../assets/images/fulls/05.jpg'),
+    thumbnail: require('../assets/images/thumbs/csharp.png'),
+    caption: 'C#',
+    iconName: 'C#',
+  },
+  {
+    src: require('../assets/images/fulls/06.jpg'),
+    thumbnail: require('../assets/images/thumbs/heroku.png'),
+    caption: 'Heroku',
+    iconName: 'Heroku',
+  },
+  {
+    src: require('../assets/images/fulls/07.jpg'),
+    thumbnail: require('../assets/images/thumbs/Postman.png'),
+    caption: 'Postman',
+    iconName: 'Postman',
+  },
+  {
+    src: require('../assets/images/fulls/08.jpg'),
+    thumbnail: require('../assets/images/thumbs/cypress.png'),
+    caption: 'Cypress',
+    iconName: 'Cypress',
+  },
+];
+
+const bikePic = require('../assets/images/thumbs/cypress.png');
+function bikeFn() {
+  return <ModalImage large={bikePic} alt="dirtbike" />;
+}
+
 const IndexPage = () => (
   <Layout>
     <Header />
 
-    <section id="banner">
+    <section
+      id="banner"
+      style={{
+        boxShadow:
+          '2px 2px 5px black, 1px 1px 3px black, 0px 0px 5px black, 0px 0px 10px black, 0px 0px 20px black, 0px 0px 30px black, 0px 0px 25px black, 0px 0px 15px black, 0px 0px 35px black, 0px 0px 40px black',
+      }}
+    >
       <header>
         <h2>About Aaron</h2>
       </header>
@@ -103,16 +144,24 @@ const IndexPage = () => (
         attached to wheels. <br />
       </p>
       <footer>
-        <Scroll type="id" element="first">
-          <a href="#first" className="button style2 scrolly">
-            Here is a picture of Aaron on a wheeled thing
-          </a>
-        </Scroll>
+        <button
+          href="#first"
+          className="button style2 scrolly"
+          style={{ fontSize: '1em' }}
+          onClick={() => bikeFn }
+        >
+          Here is a picture of Aaron on a wheeled thing
+        </button>
       </footer>
     </section>
 
     <article className="container box style2">
-      <header>
+      <header
+        style={{
+          boxShadow:
+            '2px 2px 5px black, 1px 1px 3px black, 0px 0px 5px black, 0px 0px 10px black, 0px 0px 20px black, 0px 0px 30px black, 0px 0px 25px black, 0px 0px 15px black, 0px 0px 35px black, 0px 0px 40px black',
+        }}
+      >
         <h2>Skills</h2>
         {/* <p>
           Justo phasellus et aenean dignissim
@@ -120,8 +169,17 @@ const IndexPage = () => (
           placerat cubilia purus lectus.
         </p> */}
       </header>
-
-      <div className="inner gallery">
+      <br />
+      <br />
+      <br />
+      <br />
+      <div
+        className="inner gallery"
+        style={{
+          boxShadow:
+            '2px 2px 5px black, 1px 1px 3px black, 0px 0px 5px black, 0px 0px 10px black, 0px 0px 20px black, 0px 0px 30px black, 0px 0px 25px black, 0px 0px 15px black, 0px 0px 35px black, 0px 0px 40px black',
+        }}
+      >
         <Gallery
           images={ROW1_IMAGES.map(({ src, thumbnail, caption, iconName }) => ({
             src,
@@ -146,11 +204,24 @@ const IndexPage = () => (
             iconName,
           }))}
         />
+        <Gallery
+          images={ROW4_IMAGES.map(({ src, thumbnail, caption, iconName }) => ({
+            src,
+            thumbnail,
+            caption,
+            iconName,
+          }))}
+        />
       </div>
     </article>
 
     <article className="container box style2">
-      <header>
+      <header
+        style={{
+          boxShadow:
+            '2px 2px 5px black, 1px 1px 3px black, 0px 0px 5px black, 0px 0px 10px black, 0px 0px 20px black, 0px 0px 30px black, 0px 0px 25px black, 0px 0px 15px black, 0px 0px 35px black, 0px 0px 40px black',
+        }}
+      >
         <h2>Projects</h2>
         {/* <p>
           Justo phasellus et aenean dignissim
@@ -160,7 +231,14 @@ const IndexPage = () => (
       </header>
     </article>
 
-    <article id="first" className="container box style1 right">
+    <article
+      id="first"
+      className="container box style1 right"
+      style={{
+        boxShadow:
+          '2px 2px 5px black, 1px 1px 3px black, 0px 0px 5px black, 0px 0px 10px black, 0px 0px 20px black, 0px 0px 30px black, 0px 0px 25px black, 0px 0px 15px black, 0px 0px 35px black, 0px 0px 40px black',
+      }}
+    >
       <a href="/#" className="image fit">
         {/* <img src={pic1} alt="" /> */}
         <iframe
@@ -190,14 +268,27 @@ const IndexPage = () => (
         </p>
         <br />
         <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-          <a href="https://github.com/Aaron-Nordin/genetic-toolset">Github</a>
-          <a href="https://gene-toolkit.com">Live Site</a>
+          <a
+            className="projectLink"
+            href="https://github.com/Aaron-Nordin/genetic-toolset"
+          >
+            Github
+          </a>
+          <a className="projectLink" href="https://gene-toolkit.com">
+            Live Site
+          </a>
         </div>
         <br />
       </div>
     </article>
 
-    <article className="container box style1 left">
+    <article
+      className="container box style1 left"
+      style={{
+        boxShadow:
+          '2px 2px 5px black, 1px 1px 3px black, 0px 0px 5px black, 0px 0px 10px black, 0px 0px 20px black, 0px 0px 30px black, 0px 0px 25px black, 0px 0px 15px black, 0px 0px 35px black, 0px 0px 40px black',
+      }}
+    >
       <a href="/#" className="image fit">
         <img src={pic2} alt="" />
       </a>
@@ -216,7 +307,13 @@ const IndexPage = () => (
       </div>
     </article>
 
-    <article className="container box style3">
+    <article
+      className="container box style3"
+      style={{
+        boxShadow:
+          '2px 2px 5px black, 1px 1px 3px black, 0px 0px 5px black, 0px 0px 10px black, 0px 0px 20px black, 0px 0px 30px black, 0px 0px 25px black, 0px 0px 15px black, 0px 0px 35px black, 0px 0px 40px black',
+      }}
+    >
       <header>
         <h2>Contact Me</h2>
         <br />
