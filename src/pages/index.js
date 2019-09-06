@@ -239,10 +239,10 @@ const IndexPage = () => (
               name="emailInput"
               placeholder="Your Email"
             />
-            <div className="col-6 col-12-mobile">
-              <div data-netlify-recaptcha="true"></div>
-            </div>
+            {/* <div className="col-6 col-12-mobile">
+            </div> */}
           </div>
+          <div data-netlify-recaptcha="true"></div>
           <div className="col-12">
             <textarea name="messageInput" placeholder="Message" />
           </div>
