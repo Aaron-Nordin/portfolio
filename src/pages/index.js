@@ -7,6 +7,7 @@ import pic1 from '../assets/images/pic01.jpg';
 import pic2 from '../assets/images/pic02.jpg';
 import Scroll from '../components/Scroll';
 import Gallery from '../components/Gallery';
+import D3ForceBubbles from '../components/D3ForceBubbles';
 import Lightbox from 'react-images';
 import ModalImage from 'react-modal-image';
 
@@ -179,9 +180,19 @@ const IndexPage = () => (
           boxShadow:
             '2px 2px 5px black, 1px 1px 3px black, 0px 0px 5px black, 0px 0px 10px black, 0px 0px 20px black, 0px 0px 30px black, 0px 0px 25px black, 0px 0px 15px black, 0px 0px 35px black, 0px 0px 40px black',
           backgroundColor: 'rgb(225, 255, 225, 0.3)',
+          width: '78vw',
+          position: 'relative',
+          right: '24%',
+          display:"flex",
+          justifyContent:"center",
+          flexWrap:"wrap",
+          alignContent:"center",
+          paddingBottom:"6%",
+          paddingTop:"6%"
         }}
       >
-        <Gallery
+        <D3ForceBubbles height={900} width={1500} />
+        {/* <Gallery
           images={ROW1_IMAGES.map(({ src, thumbnail, caption, iconName }) => ({
             src,
             thumbnail,
@@ -212,7 +223,7 @@ const IndexPage = () => (
             caption,
             iconName,
           }))}
-        />
+        /> */}
       </div>
     </article>
 
