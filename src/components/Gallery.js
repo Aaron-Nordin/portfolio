@@ -66,6 +66,7 @@ class Gallery extends Component {
           >
             <h1
               style={{
+                width:"75vw",
                 paddingRight: '1.3vw',
                 color: '#fafafa',
                 textShadow:

@@ -10,6 +10,7 @@ import Gallery from '../components/Gallery';
 import D3ForceBubbles from '../components/D3ForceBubbles';
 import Lightbox from 'react-images';
 import ModalImage from 'react-modal-image';
+import "./index.css"
 
 const ROW1_IMAGES = [
   {
@@ -119,10 +120,14 @@ const ROW4_IMAGES = [
   },
 ];
 
-const bikePic = require('../assets/images/thumbs/cypress.png');
-function bikeFn() {
-  return <ModalImage large={bikePic} small={bikePic} alt="dirtbike" />;
-}
+const BIKE_IMAGES = [
+  {
+    src: require('../assets/images/thumbs/cypress.png'),
+    // thumbnail: <h2>Here's a Pic</h2>,
+    caption: 'Dirt Bike',
+    iconName: "Here is a picture of Aaron on a wheeled thing.",
+  },
+];
 
 const IndexPage = () => (
   <Layout>
@@ -144,15 +149,24 @@ const IndexPage = () => (
         He also loves round things, mainly basketballs and things that are
         attached to wheels. <br />
       </p>
-      <footer>
-        <button
+      <footer className="bikePics">
+        {/* <button
           href="#first"
           className="button style2 scrolly"
           style={{ fontSize: '1em' }}
           onClick={bikeFn}
         >
           Here is a picture of Aaron on a wheeled thing
-        </button>
+        </button> */}
+        <Gallery
+          className="bikes"
+          images={BIKE_IMAGES.map(({ src, thumbnail, caption, iconName }) => ({
+            src,
+            thumbnail,
+            caption,
+            iconName,
+          }))}
+        />
       </footer>
     </section>
 
@@ -180,18 +194,20 @@ const IndexPage = () => (
           boxShadow:
             '2px 2px 5px black, 1px 1px 3px black, 0px 0px 5px black, 0px 0px 10px black, 0px 0px 20px black, 0px 0px 30px black, 0px 0px 25px black, 0px 0px 15px black, 0px 0px 35px black, 0px 0px 40px black',
           backgroundColor: 'rgb(225, 255, 225, 0.3)',
-          width: '78vw',
+          width: '75vw',
           position: 'relative',
-          right: '24%',
-          display:"flex",
-          justifyContent:"center",
-          flexWrap:"wrap",
-          alignContent:"center",
-          paddingBottom:"6%",
-          paddingTop:"6%"
+          right: '13%',
+          display: 'flex',
+          justifyContent: 'center',
+          flexWrap: 'wrap',
+          alignContent: 'center',
+          paddingBottom: '6%',
+          paddingTop: '6%',
+          paddingRight:"12%",
+          paddingLeft: "12%"
         }}
       >
-        <D3ForceBubbles height={900} width={1500} />
+        <D3ForceBubbles height={800} width={1300} />
         {/* <Gallery
           images={ROW1_IMAGES.map(({ src, thumbnail, caption, iconName }) => ({
             src,
@@ -255,7 +271,7 @@ const IndexPage = () => (
         {/* <img src={pic1} alt="" /> */}
         <iframe
           src="https://gene-toolkit.com"
-          frameborder="0"
+          frameBorder="0"
           height="100%"
           width="100%"
           style={{ zoom: '0.5' }}
@@ -331,7 +347,11 @@ const IndexPage = () => (
         <br />
         {/* <p>Diam dignissim lectus eu ornare volutpat orci.</p> */}
       </header>
-      <form action="POST" data-netlify="true" name="contactForm">
+      <form
+        action="https://formspree.io/nordin.aaron@gmail.com"
+        method="POST"
+        name="contactForm"
+      >
         <div className="row gtr-50">
           <div className="col-6 col-12-mobile">
             <input

@@ -695,6 +695,11 @@
 				padding: 2em 3em 2em 3em;
 				margin: 0;
 
+				// &:after {
+				// 	border-left: solid 1px #fff;
+
+				// }
+
 				p {
 					padding: 0;
 				}
@@ -711,7 +716,7 @@
 					top: 0;
 					left: 50%;
 					height: 100%;
-					border-left: solid 1px #fff;
+					// border-left: solid 1px #fff;
 				}
 
 				.row {
@@ -864,9 +869,9 @@
 		text-shadow: 0 0 0.5px rgba(255, 255, 255, 0.25);
 		text-align: center;
 		background: #35b88f url('../images/banner.svg') bottom center no-repeat;
-		padding: 5em 0 5em 0;
+		padding: 0 0 5em 0;
 		margin: 0;
-		background-size: 125% auto;
+		background-size: 125% auto;	
 
 		.button {
 			color: #35b882;
